@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, CheckCircle2, Clock, Wrench, Rocket } from "lucide-react";
+
 const ProjectCardModern = ({ title, description, status, technologies, demoUrl, repoUrl, index }: any) => {
   const getStatusConfig = (status: string) => {
     switch (status) {
       case "Finalizado":
         return {
           Icon: CheckCircle2,
-          gradient: "from-emerald-500 to-green-500",
-          bgGradient: "from-emerald-500/10 to-green-500/10",
+          gradient: "from-emerald-500 to-teal-600",
+          bgGradient: "from-emerald-500/10 to-teal-500/10",
           border: "border-emerald-500/30",
           text: "text-emerald-600",
+          shadow: "shadow-emerald-500/20",
         };
       case "Em desenvolvimento":
         return {
@@ -18,30 +20,34 @@ const ProjectCardModern = ({ title, description, status, technologies, demoUrl, 
           bgGradient: "from-amber-500/10 to-orange-500/10",
           border: "border-amber-500/30",
           text: "text-amber-600",
+          shadow: "shadow-amber-500/20",
         };
       case "Refatorando":
         return {
           Icon: Wrench,
-          gradient: "from-blue-500 to-cyan-500",
-          bgGradient: "from-blue-500/10 to-cyan-500/10",
-          border: "border-blue-500/30",
-          text: "text-blue-600",
+          gradient: "from-cyan-500 to-blue-600",
+          bgGradient: "from-cyan-500/10 to-blue-500/10",
+          border: "border-cyan-500/30",
+          text: "text-cyan-600",
+          shadow: "shadow-cyan-500/20",
         };
       case "Versão 1":
         return {
           Icon: Rocket,
-          gradient: "from-violet-500 to-purple-500",
+          gradient: "from-violet-600 to-purple-600",
           bgGradient: "from-violet-500/10 to-purple-500/10",
           border: "border-violet-500/30",
           text: "text-violet-600",
+          shadow: "shadow-violet-500/20",
         };
       default:
         return {
           Icon: Clock,
-          gradient: "from-slate-500 to-gray-500",
+          gradient: "from-slate-500 to-gray-600",
           bgGradient: "from-slate-500/10 to-gray-500/10",
           border: "border-slate-500/30",
           text: "text-slate-600",
+          shadow: "shadow-slate-500/20",
         };
     }
   };
@@ -68,7 +74,7 @@ const ProjectCardModern = ({ title, description, status, technologies, demoUrl, 
               {title}
             </h3>
             
-            <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border ${config.border} bg-gradient-to-br ${config.bgGradient} shadow-sm`}>
+            <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border ${config.border} bg-gradient-to-br ${config.bgGradient} shadow-sm ${config.shadow}`}>
               <StatusIcon className={`w-3.5 h-3.5 ${config.text}`} />
               <span className={`text-xs font-semibold ${config.text}`}>
                 {status}
@@ -85,7 +91,7 @@ const ProjectCardModern = ({ title, description, status, technologies, demoUrl, 
           {technologies.map((tech: string, idx: number) => {
             const gradients = [
               "from-violet-500/10 to-purple-500/10 border-violet-500/20 text-violet-700",
-              "from-cyan-500/10 to-blue-500/10 border-cyan-500/20 text-cyan-700",
+              "from-cyan-500/10 to-teal-500/10 border-cyan-500/20 text-cyan-700",
               "from-amber-500/10 to-orange-500/10 border-amber-500/20 text-amber-700",
               "from-pink-500/10 to-rose-500/10 border-pink-500/20 text-pink-700",
             ];
@@ -111,7 +117,7 @@ const ProjectCardModern = ({ title, description, status, technologies, demoUrl, 
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r ${config.gradient} text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all`}
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r ${config.gradient} text-white font-semibold text-sm shadow-lg ${config.shadow} hover:shadow-xl transition-all`}
             >
               <ExternalLink className="w-4 h-4" />
               Ver Projeto

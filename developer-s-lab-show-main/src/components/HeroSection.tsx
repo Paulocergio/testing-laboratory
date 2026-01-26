@@ -5,19 +5,8 @@ import {
   ArrowDown, 
   Sparkles,
   Code2,
-  Lightbulb,
-  Target,
-  Zap,
-  ExternalLink,
-  CheckCircle2,
-  Clock,
-  Wrench,
-  Rocket,
-  FlaskConical,
-  Mail
 } from "lucide-react";
 
-// ==================== HERO SECTION ====================
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -25,8 +14,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-      {/* Animated background with modern gradients */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900">
+      {/* Animated background com nova paleta */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
@@ -39,7 +28,7 @@ const HeroSection = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-violet-500/30 to-purple-500/30 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-violet-500/30 to-purple-600/30 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -52,7 +41,7 @@ const HeroSection = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-400/30 to-teal-500/30 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -64,7 +53,7 @@ const HeroSection = () => {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-emerald-400/20 to-cyan-500/20 rounded-full blur-3xl"
         />
       </div>
 
@@ -80,8 +69,8 @@ const HeroSection = () => {
             transition={{ delay: 0.2 }}
             className="flex justify-center mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
-              <Sparkles className="w-4 h-4 text-amber-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 backdrop-blur-md border border-violet-400/30 shadow-lg shadow-violet-500/20">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               <span className="text-sm font-medium text-white">
                 Desenvolvedor Full Stack
               </span>
@@ -96,7 +85,7 @@ const HeroSection = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-center mb-6 leading-tight"
           >
             <span className="block text-white mb-2">Transformando</span>
-            <span className="block bg-gradient-to-r from-violet-400 via-cyan-400 to-amber-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-violet-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent animate-gradient">
               Ideias em Código
             </span>
           </motion.h1>
@@ -134,9 +123,10 @@ const HeroSection = () => {
 
             <button
               onClick={() => scrollToSection("laboratorio")}
-              className="group px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="group px-8 py-4 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 backdrop-blur-md border-2 border-cyan-400/30 text-white font-semibold rounded-xl hover:border-cyan-400/50 hover:bg-cyan-500/20 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/20"
             >
               <span className="flex items-center gap-2">
+                <Code2 className="w-4 h-4 text-cyan-400" />
                 Laboratório
                 <Sparkles className="w-4 h-4 text-amber-400 group-hover:rotate-12 transition-transform" />
               </span>
@@ -151,15 +141,15 @@ const HeroSection = () => {
             className="flex justify-center gap-6"
           >
             {[
-              { Icon: Github, href: "https://github.com", color: "hover:text-slate-200" },
-              { Icon: Linkedin, href: "https://linkedin.com", color: "hover:text-cyan-400" }
+              { Icon: Github, href: "https://github.com", color: "hover:text-slate-200 hover:shadow-slate-500/20" },
+              { Icon: Linkedin, href: "https://linkedin.com", color: "hover:text-cyan-400 hover:shadow-cyan-500/20" }
             ].map(({ Icon, href, color }, i) => (
               <motion.a
                 key={i}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-slate-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-white/10`}
+                className={`p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-slate-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-white/10 shadow-lg`}
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -180,7 +170,7 @@ const HeroSection = () => {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             onClick={() => scrollToSection("sobre")}
-            className="p-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-cyan-400 hover:bg-white/10 transition-colors cursor-pointer"
+            className="p-2 rounded-full bg-cyan-500/10 backdrop-blur-sm border border-cyan-400/30 text-cyan-400 hover:bg-cyan-500/20 transition-colors cursor-pointer shadow-lg shadow-cyan-500/20"
           >
             <ArrowDown className="w-5 h-5" />
           </motion.button>
@@ -189,4 +179,5 @@ const HeroSection = () => {
     </section>
   );
 };
+
 export default HeroSection;

@@ -16,25 +16,34 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
         to={to}
         className={({ isActive, isPending }) =>
           cn(
-            // Base styles
-            "relative font-medium text-gray-600 transition-all duration-300 hover:text-[#158fa2] px-4 py-2 rounded-lg group",
-            
-            // Active state - usando as cores da paleta
+
+            "relative font-medium text-slate-600 transition-all duration-300 hover:text-cyan-600 px-4 py-2 rounded-xl group",
+
+
+            "hover:bg-slate-50",
+
+
             isActive && cn(
-              "text-[#722731] font-bold",
+              "text-transparent bg-gradient-to-r from-violet-600 via-cyan-600 to-teal-600 bg-clip-text font-bold",
               "before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5",
-              "before:bg-gradient-to-r before:from-[#e4b302] before:via-[#158fa2] before:to-[#de4f3a]",
-              "before:rounded-full",
+              "before:bg-gradient-to-r before:from-violet-500 before:via-cyan-500 before:to-teal-500",
+              "before:rounded-full before:shadow-lg before:shadow-cyan-500/50",
+              "after:absolute after:inset-0 after:bg-gradient-to-r after:from-violet-500/5 after:via-cyan-500/5 after:to-teal-500/5",
+              "after:rounded-xl after:-z-10",
               activeClassName
             ),
-            
-            // Pending state
+
+
             isPending && cn(
-              "text-[#158fa2] opacity-70 animate-pulse",
+              "text-cyan-600 opacity-70",
+              "animate-pulse",
               pendingClassName
             ),
-            
-            // Custom className
+
+
+            !isActive && "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-violet-500 after:via-cyan-500 after:to-teal-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4",
+
+
             className
           )
         }

@@ -7,15 +7,17 @@ const AboutSectionModern = () => {
       icon: Code2,
       title: "Código Limpo",
       description: "Foco em boas práticas, padrões e organização",
-      gradient: "from-violet-500 to-purple-500",
+      gradient: "from-violet-600 to-purple-600",
       bgGradient: "from-violet-500/10 to-purple-500/10",
+      shadow: "shadow-violet-500/20",
     },
     {
       icon: Target,
       title: "Entregas Reais",
       description: "Projetos funcionais e hospedados online",
-      gradient: "from-cyan-500 to-blue-500",
-      bgGradient: "from-cyan-500/10 to-blue-500/10",
+      gradient: "from-cyan-500 to-teal-500",
+      bgGradient: "from-cyan-500/10 to-teal-500/10",
+      shadow: "shadow-cyan-500/20",
     },
     {
       icon: Lightbulb,
@@ -23,6 +25,7 @@ const AboutSectionModern = () => {
       description: "Laboratório para testar novas tecnologias",
       gradient: "from-amber-500 to-orange-500",
       bgGradient: "from-amber-500/10 to-orange-500/10",
+      shadow: "shadow-amber-500/20",
     },
   ];
 
@@ -43,10 +46,10 @@ const AboutSectionModern = () => {
         >
           {/* Section Header */}
           <div className="flex items-center gap-4 mb-16">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 text-white font-bold text-lg shadow-lg shadow-violet-500/30">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600 to-purple-600 text-white font-bold text-lg shadow-lg shadow-violet-500/30">
               01
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-violet-800 to-slate-900 bg-clip-text text-transparent">
               Sobre
             </h2>
             <div className="flex-1 h-px bg-gradient-to-r from-slate-300 to-transparent" />
@@ -63,7 +66,7 @@ const AboutSectionModern = () => {
               className="space-y-6"
             >
               <div className="relative">
-                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-violet-500 via-cyan-500 to-amber-500 rounded-full" />
+                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-violet-600 via-cyan-500 to-amber-500 rounded-full" />
                 <div className="pl-6 space-y-6">
                   <p className="text-slate-700 leading-relaxed text-lg">
                     Meu foco principal é desenvolvimento de software com tecnologias 
@@ -83,7 +86,7 @@ const AboutSectionModern = () => {
               {/* Quote Card */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl"
+                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 shadow-xl shadow-violet-500/20 border border-violet-500/20"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-500/20 to-transparent rounded-bl-full" />
                 <Zap className="w-8 h-8 text-amber-400 mb-3" />
@@ -112,7 +115,7 @@ const AboutSectionModern = () => {
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className={`flex-shrink-0 p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}
+                      className={`flex-shrink-0 p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg ${item.shadow}`}
                     >
                       <item.icon className="w-6 h-6 text-white" />
                     </motion.div>
